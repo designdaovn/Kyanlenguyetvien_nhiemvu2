@@ -183,22 +183,21 @@
 </head>
 <body>
   <div class="quiz-container" id="quiz">
-    <h2>Câu hỏi: Tài liệu nào đã bị làm giả?</h2>
-    <div class="subtitle">Trước khi chọn đáp án, hãy chắc rằng bạn đã tìm ra 2 đặc điểm của tài liệu bị làm giả</div>
+    <h2>Ai là hung thủ?</h2>
+    <div class="subtitle">(Ai là hung thủ sát hại Trần Tướng Quân, Lý Mama và Hoàng công công?)</div>
 
     <ul class="answers" id="q1">
-      <li><input type="checkbox" value="0" id="ans0"><label for="ans0">Báo cáo vụ án</label></li>
-      <li><input type="checkbox" value="1" id="ans1"><label for="ans1">Câu hỏi về nạn nhân</label></li>
-      <li><input type="checkbox" value="2" id="ans2"><label for="ans2">Lời khai nhân chứng: Nguyễn Văn Hải</label></li>
-      <li><input type="checkbox" value="3" id="ans3"><label for="ans3">Lời khai nhân chứng: Nguyễn Thị Lan</label></li>
-      <li><input type="checkbox" value="4" id="ans4"><label for="ans4">Lời khai nhân chứng: Nguyễn Nhật Linh</label></li>
-      <li><input type="checkbox" value="5" id="ans5"><label for="ans5">Lời khai nghi phạm: Nguyễn Ngọc</label></li>
-      <li><input type="checkbox" value="6" id="ans6"><label for="ans6">Lời khai nghi phạm:Vũ Hải Yến</label></li>
-      <li><input type="checkbox" value="7" id="ans7"><label for="ans7">Lời khai nghi phạm: Hoàng TIến</label></li>
-      <li><input type="checkbox" value="8" id="ans8"><label for="ans8">Lời khai nghi phạm: Hoàng Tiến</label></li>
-      <li><input type="checkbox" value="9" id="ans9"><label for="ans9">Ảnh hiện trường</label></li>
-      <li><input type="checkbox" value="10" id="ans10"><label for="ans10">Giám định mẫu vật</label></li>
-      <li><input type="checkbox" value="11" id="ans11"><label for="ans11">Danh sách cuộc gọi cuối của nạn nhân</label></li>
+      <li><input type="checkbox" value="0" id="ans0"><label for="ans0">Trần Nhật Minh</label></li>
+      <li><input type="checkbox" value="1" id="ans1"><label for="ans1">Nguyễn Thị Lộ - bà vú</label></li>
+      <li><input type="checkbox" value="2" id="ans2"><label for="ans2">Lý Nhật Vũ</label></li>
+      <li><input type="checkbox" value="3" id="ans3"><label for="ans3">Tam Phu Nhân</label></li>
+      <li><input type="checkbox" value="4" id="ans4"><label for="ans4">Tào Quản Gia</label></li>
+      <li><input type="checkbox" value="5" id="ans5"><label for="ans5">Tiểu Linh</label></li>
+      <li><input type="checkbox" value="6" id="ans6"><label for="ans6">Tiểu Phong</label></li>
+      <li><input type="checkbox" value="7" id="ans7"><label for="ans7">Trần Tướng Quân</label></li>
+      <li><input type="checkbox" value="8" id="ans8"><label for="ans8">Bát Vương Gia</label></li>
+      <li><input type="checkbox" value="9" id="ans9"><label for="ans9">Hoàng Công Công</label></li>
+      <li><input type="checkbox" value="10" id="ans10"><label for="ans10">Lý Mama</label></li>
     </ul>
 
     <!-- nút kiểm tra đáp án (nguyên bản) -->
@@ -243,7 +242,7 @@
         return;
       }
 
-      const correct = [11]; // đáp án đúng
+      const correct = [6]; // đáp án đúng
       selected.sort();
 
       if (JSON.stringify(selected) === JSON.stringify(correct)) {
@@ -251,7 +250,7 @@
         document.getElementById('quiz').style.display = 'none';
         document.getElementById('result-img').style.display = 'block';
         document.getElementById('result-image').src =
-          "https://raw.githubusercontent.com/designdaovn/acgiaacbao-nhiemvu2/refs/heads/main/Giai%20thich%20NV2%20copy.jpg";
+          "https://raw.githubusercontent.com/designdaovn/Kyanlenguyetvien_nhiemvu2/refs/heads/main/Giai%20thich%20NV2%20copy.jpg";
       } else {
         // Nếu sai → hiện popup
         document.getElementById('popup').style.display = 'flex';
@@ -266,7 +265,7 @@
 
     // hiển thị popup gợi ý (thay HINT_IMAGE_URL bằng link ảnh của bạn)
     function showHintPopup() {
-      const HINT_IMAGE_URL = "https://raw.githubusercontent.com/designdaovn/acgiaacbao-nhiemvu2/refs/heads/main/goi%20y%202.png";
+      const HINT_IMAGE_URL = "https://raw.githubusercontent.com/designdaovn/Kyanlenguyetvien_nhiemvu2/refs/heads/main/goi%20y%202Artboard%201.jpg";
       // thay bằng URL ảnh bạn muốn hiển thị trong popup gợi ý
       document.getElementById('hint-popup-img').src = HINT_IMAGE_URL;
       document.getElementById('hint-popup').style.display = 'flex';
