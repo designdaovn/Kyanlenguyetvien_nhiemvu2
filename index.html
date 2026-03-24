@@ -971,76 +971,173 @@
 
     <!-- ====== QUIZ ====== -->
     <div id="quiz">
-      <div class="case-banner">
-        <span class="badge">🔍 Điều Tra Viên</span>
-        <span class="case-id">KỲ ÁN LỆ NGUYỆT VIÊN</span>
-      </div>
-      <div class="card">
-        <div class="case-label">— Nhiệm Vụ 2 —</div>
-        <h2>Ai Là Hung Thủ?</h2>
-        <div class="divider"><span class="divider-icon">⬡</span></div>
-        <p class="subtitle">Ai là hung thủ sát hại Trần Tướng Quân,<br>Lý Mama và Hoàng Công Công?</p>
-        <div class="instruction" style="margin-bottom:16px;">
-          <span>⬡ CHỌN ĐÚNG 1 NGHI PHẠM ⬡</span>
+
+      <!-- ── BƯỚC 1: Xác định hung thủ ── -->
+      <div id="step1">
+        <div class="case-banner">
+          <span class="badge">🔍 Điều Tra Viên</span>
+          <span class="case-id">KỲ ÁN LỆ NGUYỆT VIÊN</span>
         </div>
-        <ul class="answers" id="q1">
-          <li>
-            <input type="radio" name="suspect" value="0" id="s_0">
-            <label for="s_0"><div class="check-box"></div><span class="evidence-num">N-01</span>Trần Nhật Minh</label>
-          </li>
-          <li>
-            <input type="radio" name="suspect" value="1" id="s_1">
-            <label for="s_1"><div class="check-box"></div><span class="evidence-num">N-02</span>Nguyễn Thị Lộ - bà vú</label>
-          </li>
-          <li>
-            <input type="radio" name="suspect" value="2" id="s_2">
-            <label for="s_2"><div class="check-box"></div><span class="evidence-num">N-03</span>Lý Nhật Vũ</label>
-          </li>
-          <li>
-            <input type="radio" name="suspect" value="3" id="s_3">
-            <label for="s_3"><div class="check-box"></div><span class="evidence-num">N-04</span>Tam Phu Nhân</label>
-          </li>
-          <li>
-            <input type="radio" name="suspect" value="4" id="s_4">
-            <label for="s_4"><div class="check-box"></div><span class="evidence-num">N-05</span>Tào Quản Gia</label>
-          </li>
-          <li>
-            <input type="radio" name="suspect" value="5" id="s_5">
-            <label for="s_5"><div class="check-box"></div><span class="evidence-num">N-06</span>Tiểu Linh</label>
-          </li>
-          <li>
-            <input type="radio" name="suspect" value="6" id="s_6">
-            <label for="s_6"><div class="check-box"></div><span class="evidence-num">N-07</span>Tiểu Phong</label>
-          </li>
-          <li>
-            <input type="radio" name="suspect" value="7" id="s_7">
-            <label for="s_7"><div class="check-box"></div><span class="evidence-num">N-08</span>Trần Tướng Quân</label>
-          </li>
-          <li>
-            <input type="radio" name="suspect" value="8" id="s_8">
-            <label for="s_8"><div class="check-box"></div><span class="evidence-num">N-09</span>Bát Vương Gia</label>
-          </li>
-          <li>
-            <input type="radio" name="suspect" value="9" id="s_9">
-            <label for="s_9"><div class="check-box"></div><span class="evidence-num">N-10</span>Hoàng Công Công</label>
-          </li>
-          <li>
-            <input type="radio" name="suspect" value="10" id="s_10">
-            <label for="s_10"><div class="check-box"></div><span class="evidence-num">N-11</span>Lý Mama</label>
-          </li>
-        </ul>
-        <div class="btn-group">
-          <button class="btn-submit" onclick="checkAnswers()">XÁC NHẬN PHÂN TÍCH</button>
-          <button class="btn-hint" onclick="showHintPopup()">
-            <span class="hint-title">⬡ GỢI Ý</span>
-            <span class="hint-sub">chỉ sử dụng khi đã rất bế tắc</span>
-          </button>
-        </div>
-        <div class="case-footer">
-          <span class="footer-mono">BẢO MẬT — CẤP ĐỘ 3</span>
-          <span class="footer-mono">2025 · HỒ SƠ MẬT</span>
+        <div class="card">
+          <div class="case-label">— Bước 1 / 2 —</div>
+          <h2>Ai Là Hung Thủ?</h2>
+          <div class="divider"><span class="divider-icon">⬡</span></div>
+          <p class="subtitle">Ai là hung thủ sát hại Trần Tướng Quân,<br>Lý Mama và Hoàng Công Công?</p>
+          <div class="instruction" style="margin-bottom:16px;">
+            <span>⬡ CHỌN ĐÚNG 1 NGHI PHẠM ⬡</span>
+          </div>
+          <ul class="answers" id="q1">
+            <li><input type="radio" name="suspect" value="0" id="s_0"><label for="s_0"><div class="check-box"></div><span class="evidence-num">N-01</span>Trần Nhật Minh</label></li>
+            <li><input type="radio" name="suspect" value="1" id="s_1"><label for="s_1"><div class="check-box"></div><span class="evidence-num">N-02</span>Nguyễn Thị Lộ - bà vú</label></li>
+            <li><input type="radio" name="suspect" value="2" id="s_2"><label for="s_2"><div class="check-box"></div><span class="evidence-num">N-03</span>Lý Nhật Vũ</label></li>
+            <li><input type="radio" name="suspect" value="3" id="s_3"><label for="s_3"><div class="check-box"></div><span class="evidence-num">N-04</span>Tam Phu Nhân</label></li>
+            <li><input type="radio" name="suspect" value="4" id="s_4"><label for="s_4"><div class="check-box"></div><span class="evidence-num">N-05</span>Tào Quản Gia</label></li>
+            <li><input type="radio" name="suspect" value="5" id="s_5"><label for="s_5"><div class="check-box"></div><span class="evidence-num">N-06</span>Tiểu Linh</label></li>
+            <li><input type="radio" name="suspect" value="6" id="s_6"><label for="s_6"><div class="check-box"></div><span class="evidence-num">N-07</span>Tiểu Phong</label></li>
+            <li><input type="radio" name="suspect" value="7" id="s_7"><label for="s_7"><div class="check-box"></div><span class="evidence-num">N-08</span>Trần Tướng Quân</label></li>
+            <li><input type="radio" name="suspect" value="8" id="s_8"><label for="s_8"><div class="check-box"></div><span class="evidence-num">N-09</span>Bát Vương Gia</label></li>
+            <li><input type="radio" name="suspect" value="9" id="s_9"><label for="s_9"><div class="check-box"></div><span class="evidence-num">N-10</span>Hoàng Công Công</label></li>
+            <li><input type="radio" name="suspect" value="10" id="s_10"><label for="s_10"><div class="check-box"></div><span class="evidence-num">N-11</span>Lý Mama</label></li>
+          </ul>
+          <div class="btn-group">
+            <button class="btn-submit" onclick="checkStep1()">XÁC NHẬN PHÂN TÍCH</button>
+            <button class="btn-hint" onclick="showHintPopup()">
+              <span class="hint-title">⬡ GỢI Ý</span>
+              <span class="hint-sub">chỉ sử dụng khi đã rất bế tắc</span>
+            </button>
+          </div>
+          <div class="case-footer">
+            <span class="footer-mono">BẢO MẬT — CẤP ĐỘ 3</span>
+            <span class="footer-mono">2025 · HỒ SƠ MẬT</span>
+          </div>
         </div>
       </div>
+
+      <!-- ── BƯỚC 2: Tìm bằng chứng ── -->
+      <div id="step2" style="display:none;">
+        <div class="case-banner">
+          <span class="badge">🔍 Điều Tra Viên</span>
+          <span class="case-id">KỲ ÁN LỆ NGUYỆT VIÊN</span>
+        </div>
+        <div class="card">
+          <div class="case-label">— Bước 2 / 2 —</div>
+          <h2>Tài Liệu Nào Chứng Minh Cho Kết Luận Của Bạn?</h2>
+          <div class="divider"><span class="divider-icon">⬡</span></div>
+          <p class="subtitle">Chọn những tài liệu, lời khai và vật chứng<br>giúp bạn xác định hung thủ</p>
+
+          <!-- ══════════════════════════════════════════════════
+               SỐ ĐÁP ÁN CẦN CHỌN — THAY SỐ Ở ĐÂY
+               Hiện tại: chọn ít nhất 5
+               ══════════════════════════════════════════════════ -->
+          <div class="instruction" style="margin-bottom:16px;">
+            <span>⬡ CHỌN ÍT NHẤT 5 BẰNG CHỨNG ⬡</span>
+          </div>
+
+          <ul class="answers-grid" id="q2">
+          <li>
+            <input type="checkbox" value="0" id="e2_0">
+            <label for="e2_0"><div class="check-box"></div><span class="evidence-num">E-01</span>Báo cáo Vụ án</label>
+          </li>
+          <li>
+            <input type="checkbox" value="1" id="e2_1">
+            <label for="e2_1"><div class="check-box"></div><span class="evidence-num">E-02</span>Câu hỏi về nạn nhân - Tam Phu Nhân</label>
+          </li>
+          <li>
+            <input type="checkbox" value="2" id="e2_2">
+            <label for="e2_2"><div class="check-box"></div><span class="evidence-num">E-03</span>Lời khai nhân chứng - Tào Quảng</label>
+          </li>
+          <li>
+            <input type="checkbox" value="3" id="e2_3">
+            <label for="e2_3"><div class="check-box"></div><span class="evidence-num">E-04</span>Lời khai nhân chứng - Nguyễn Thị Lộ</label>
+          </li>
+          <li>
+            <input type="checkbox" value="4" id="e2_4">
+            <label for="e2_4"><div class="check-box"></div><span class="evidence-num">E-05</span>Lời khai nhân chứng - Trần Nhật Minh</label>
+          </li>
+          <li>
+            <input type="checkbox" value="5" id="e2_5">
+            <label for="e2_5"><div class="check-box"></div><span class="evidence-num">E-06</span>Tờ khai người liên quan - Tào Quảng</label>
+          </li>
+          <li>
+            <input type="checkbox" value="6" id="e2_6">
+            <label for="e2_6"><div class="check-box"></div><span class="evidence-num">E-07</span>Tờ khai người liên quan - Tiểu Phong</label>
+          </li>
+          <li>
+            <input type="checkbox" value="7" id="e2_7">
+            <label for="e2_7"><div class="check-box"></div><span class="evidence-num">E-08</span>Tờ khai người liên quan - Tiểu Linh</label>
+          </li>
+          <li>
+            <input type="checkbox" value="8" id="e2_8">
+            <label for="e2_8"><div class="check-box"></div><span class="evidence-num">E-09</span>Tờ khai người liên quan - Lý Nhật Vũ</label>
+          </li>
+          <li>
+            <input type="checkbox" value="9" id="e2_9">
+            <label for="e2_9"><div class="check-box"></div><span class="evidence-num">E-10</span>Lời khai nghi phạm - Lý Nhật Vũ</label>
+          </li>
+          <li>
+            <input type="checkbox" value="10" id="e2_10">
+            <label for="e2_10"><div class="check-box"></div><span class="evidence-num">E-11</span>Vật chứng số 1 - Dao găm</label>
+          </li>
+          <li>
+            <input type="checkbox" value="11" id="e2_11">
+            <label for="e2_11"><div class="check-box"></div><span class="evidence-num">E-12</span>Vật chứng số 2 - Mảnh giấy</label>
+          </li>
+          <li>
+            <input type="checkbox" value="12" id="e2_12">
+            <label for="e2_12"><div class="check-box"></div><span class="evidence-num">E-13</span>Vật chứng số 3 - Chiếc giày vải</label>
+          </li>
+          <li>
+            <input type="checkbox" value="13" id="e2_13">
+            <label for="e2_13"><div class="check-box"></div><span class="evidence-num">E-14</span>Vật chứng số 4 - Dấu chân trong thư phòng</label>
+          </li>
+          <li>
+            <input type="checkbox" value="14" id="e2_14">
+            <label for="e2_14"><div class="check-box"></div><span class="evidence-num">E-15</span>Báo cáo khám nghiệm tử thi</label>
+          </li>
+          <li>
+            <input type="checkbox" value="15" id="e2_15">
+            <label for="e2_15"><div class="check-box"></div><span class="evidence-num">E-16</span>Ảnh hiện trường</label>
+          </li>
+          <li>
+            <input type="checkbox" value="16" id="e2_16">
+            <label for="e2_16"><div class="check-box"></div><span class="evidence-num">E-17</span>ĐIỀN_ĐÁP_ÁN_MỚI_17</label>
+          </li>
+          <li>
+            <input type="checkbox" value="17" id="e2_17">
+            <label for="e2_17"><div class="check-box"></div><span class="evidence-num">E-18</span>ĐIỀN_ĐÁP_ÁN_MỚI_18</label>
+          </li>
+          <li>
+            <input type="checkbox" value="18" id="e2_18">
+            <label for="e2_18"><div class="check-box"></div><span class="evidence-num">E-19</span>ĐIỀN_ĐÁP_ÁN_MỚI_19</label>
+          </li>
+          <li>
+            <input type="checkbox" value="19" id="e2_19">
+            <label for="e2_19"><div class="check-box"></div><span class="evidence-num">E-20</span>ĐIỀN_ĐÁP_ÁN_MỚI_20</label>
+          </li>
+          <li>
+            <input type="checkbox" value="20" id="e2_20">
+            <label for="e2_20"><div class="check-box"></div><span class="evidence-num">E-21</span>ĐIỀN_ĐÁP_ÁN_MỚI_21</label>
+          </li>
+          <li>
+            <input type="checkbox" value="21" id="e2_21">
+            <label for="e2_21"><div class="check-box"></div><span class="evidence-num">E-22</span>ĐIỀN_ĐÁP_ÁN_MỚI_22</label>
+          </li>
+          <li>
+            <input type="checkbox" value="22" id="e2_22">
+            <label for="e2_22"><div class="check-box"></div><span class="evidence-num">E-23</span>ĐIỀN_ĐÁP_ÁN_MỚI_23</label>
+          </li>
+          </ul>
+
+          <div class="btn-group">
+            <button class="btn-submit" onclick="checkStep2()">XÁC NHẬN PHÂN TÍCH</button>
+          </div>
+          <div class="case-footer">
+            <span class="footer-mono">BẢO MẬT — CẤP ĐỘ 3</span>
+            <span class="footer-mono">2025 · HỒ SƠ MẬT</span>
+          </div>
+        </div>
+      </div>
+
     </div>
     <!-- ====== RESULT ====== -->
     <div id="result-img">
@@ -1115,17 +1212,53 @@
   </div>
 
   <script>
-    function checkAnswers() {
+    // ══════════════════════════════════════════════════
+    // ĐÁP ÁN CÂU 1 — THAY ĐỔI Ở ĐÂY NẾU CẦN
+    // index 6 = "Tiểu Phong"
+    const correctQ1 = 6;
+
+    // ══════════════════════════════════════════════════
+    // ĐÁP ÁN CÂU 2 — ĐIỀN INDEX CÁC ĐÁP ÁN ĐÚNG VÀO ĐÂY
+    // Ví dụ: [0, 1, 5, 6, 11] = index trong danh sách 23 mục
+    const correctQ2 = [0, 1, 5, 6, 7, 11, 13, 14, 15]; // ← THAY ĐỔI SAU KHI ĐIỀN NỘI DUNG
+    const minCorrect = 5; // ← số tối thiểu cần đúng
+    // ══════════════════════════════════════════════════
+
+    function checkAnswers() {} // placeholder
+
+    function checkStep1() {
       const sel = document.querySelector('#q1 input[type="radio"]:checked');
       if (!sel) { alert("⚠ Vui lòng chọn một nghi phạm!"); return; }
 
-      // ══════════════════════════════════════════════════
-      // ĐÁP ÁN — THAY ĐỔI Ở ĐÂY NẾU CẦN
-      // index 6 = "Tiểu Phong"
-      const correct = 6;
-      // ══════════════════════════════════════════════════
+      if (parseInt(sel.value) === correctQ1) {
+        // Đúng → fade sang bước 2
+        const s1 = document.getElementById('step1');
+        s1.style.transition = 'opacity 0.3s ease';
+        s1.style.opacity = '0';
+        setTimeout(() => {
+          s1.style.display = 'none';
+          const s2 = document.getElementById('step2');
+          s2.style.display = 'block';
+          s2.style.opacity = '0';
+          s2.style.transition = 'opacity 0.35s ease';
+          requestAnimationFrame(() => requestAnimationFrame(() => s2.style.opacity = '1'));
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 300);
+      } else {
+        // ══════════════════════════════════════════════════
+        // ẢNH POPUP SAI — THAY LINK Ở ĐÂY
+        // ══════════════════════════════════════════════════
+        document.getElementById('popup-img').src =
+          "https://raw.githubusercontent.com/designdaovn/acgiaacbao-nhiemvu2/refs/heads/main/khi%20chon%20dap%20an%20sai.png";
+        document.getElementById('popup').style.display = 'flex';
+      }
+    }
 
-      if (parseInt(sel.value) === correct) {
+    function checkStep2() {
+      const checked = [...document.querySelectorAll('#q2 input:checked')].map(i => parseInt(i.value));
+      const hits = checked.filter(v => correctQ2.includes(v));
+
+      if (hits.length >= minCorrect) {
         document.getElementById('quiz').style.display = 'none';
         document.getElementById('result-img').style.display = 'block';
         // ══════════════════════════════════════════════════
@@ -1134,9 +1267,6 @@
         document.getElementById('result-image').src =
           "https://raw.githubusercontent.com/designdaovn/Kyanlenguyetvien_nhiemvu2/refs/heads/main/Giai%20thich%20NV2%20copy.jpg";
       } else {
-        // ══════════════════════════════════════════════════
-        // ẢNH POPUP SAI — THAY LINK Ở ĐÂY
-        // ══════════════════════════════════════════════════
         document.getElementById('popup-img').src =
           "https://raw.githubusercontent.com/designdaovn/acgiaacbao-nhiemvu2/refs/heads/main/khi%20chon%20dap%20an%20sai.png";
         document.getElementById('popup').style.display = 'flex';
@@ -1155,16 +1285,19 @@
     // ══════════════════════════════════════════════════
     // [LINK TRANG TIẾP THEO] ← THAY URL Ở ĐÂY
     // ══════════════════════════════════════════════════
-    const NEXT_PAGE_URL = "https://designdaovn.github.io/Kyanlenguyetvien_nhiemvu3/";
+    const NEXT_PAGE_URL = "ĐIỀN_LINK_TRANG_TIẾP_THEO_VÀO_ĐÂY";
 
     function goNext() {
       window.location.href = NEXT_PAGE_URL;
     }
 
     function goBack() {
-      document.querySelectorAll('#q1 input[type="radio"]').forEach(r => r.checked = false);
+      document.querySelectorAll('#q1 input, #q2 input').forEach(i => i.checked = false);
       document.getElementById('result-img').style.display = 'none';
       document.getElementById('quiz').style.display = 'block';
+      document.getElementById('step2').style.display = 'none';
+      document.getElementById('step1').style.display = 'block';
+      document.getElementById('step1').style.opacity = '1';
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
